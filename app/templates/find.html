@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find | Text Stash</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'template.css' %}">
+    <style>
+    p {
+    text-align: justify;
+    text-justify: inter-word;
+    }
+</style>
+</head>
+<body>
+    <nav class="center">
+		<a href="/">Home</a> |
+		<a href="/write">Write</a> |
+		<a href="/read">Find</a>
+	</nav>
+    <form method="post">
+        {% csrf_token %}
+        <br>
+        <label for="title_input">Title:</label>
+        <input type="text" id="title_input" name="title_input">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
